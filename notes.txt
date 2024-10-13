@@ -40,3 +40,23 @@ https://regexr.com/ --> community pattern --> search email or any other field yo
 
 
 Step 6:-
+create a schema folder 
+
+Step 7 :- install library 
+npm i zod
+
+follow this git repository 
+https://github.com/colinhacks/zod
+Type-Safe Validation: Zod automatically infers TypeScript types from your schema, so your validation logic and types are always in sync.
+Declarative Schemas: You define schemas in a declarative style, which makes validation rules clear and easy to maintain.
+Composability: Zod schemas can be easily composed together, allowing you to build complex validations from smaller parts.
+Validation and Parsing: Zod not only checks if the input is valid but also parses the data into the expected format.
+Custom Error Messages: You can define custom error messages for better feedback.
+
+
+Step 8:
+
+create a lib folder 
+create a database.ts --> for database connection
+
+write the typescript code in the database.ts file
