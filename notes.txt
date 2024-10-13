@@ -40,9 +40,12 @@ https://regexr.com/ --> community pattern --> search email or any other field yo
 
 
 Step 6:-
+
 create a schema folder 
 
-Step 7 :- install library 
+Step 7 :-
+
+ install library 
 npm i zod
 
 follow this git repository 
@@ -53,10 +56,93 @@ Composability: Zod schemas can be easily composed together, allowing you to buil
 Validation and Parsing: Zod not only checks if the input is valid but also parses the data into the expected format.
 Custom Error Messages: You can define custom error messages for better feedback.
 
-
 Step 8:
+create an .env file 
+create an .env.sample 
+
+
+write this in .env
+MOGODB_URI=""
+
+
+Step 9:
 
 create a lib folder 
 create a database.ts --> for database connection
 
 write the typescript code in the database.ts file
+//
+
+
+Step 10:- 
+RESET email (opt send  email to user) 
+->> new regestration 
+--> updating an extsting but unverified user with new password and verification code
+
+algorithum
+
+ if extsting then take info 
+ if exist but not verified 
+ if exit but not verified  and password is same then update password and send email 
+
+
+STEP 11:-
+
+->go to resend.com 
+->create an API key 
+->paste it in env file
+
+-->create resend.ts file in lib 
+--> go in docs of resend and go to the next js starting template
+-->copy it from template
+-->paste it in resend.ts file
+
+import type { NextApiRequest, NextApiResponse } from 'next';
+// import { EmailTemplate } from '../../components/EmailTemplate';
+import { Resend } from 'resend';
+
+export const resend = new Resend(process.env.RESEND_API_KEY);
+
+
+Step 12:-
+
+https://react.email/docs/integrations/resend go to this website 
+--> resend mail 
+--> paste the code in   "feedback_system\emails\VerificationEmail.tsx"
+
+import * as React from 'react';
+import { Html, Button } from "@react-email/components";
+
+export function Email(props) {
+  const { url } = props;
+
+  return (
+    <Html lang="en">
+      <Button href={url}>Click me</Button>
+    </Html>
+  );
+}
+
+export default Email;
+
+
+Step 13:-
+
+feedback_system\src\helpers\sendVerificationEmail.ts //in this code there is a logic to  send email 
+and the verifictaion code render from the template "feedback_system\emails\VerificationEmail.tsx"
+
+
+Step 14:-
+
+Create a api folder in src 
+--> create a sign-up folder and add routers
+
+npm i bcryptjs
+->>bcrypt is a password-hashing function designed to securely store passwords. It helps protect passwords by hashing them before storing them in a database, which makes it difficult for attackers to retrieve the original passwords even if they gain access to the hashed data
+
+
+Step 15 :- 
+for  information of routers go to this gpt link
+https://chatgpt.com/share/670ba261-b2ec-8008-89a4-47e724a03af9
+
+
