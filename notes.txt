@@ -1,0 +1,42 @@
+STEP 1:-
+npx create-next-app@latest -->put this command on terminal to start NEXT JS
+
+STEP 2:-
+PS C:\Users\Abhishek\Desktop\Feedback-system-using-NEXT-JS> npx create-next-app@latest
+Need to install the following packages:
+create-next-app@14.2.15
+Ok to proceed? (y) y
+
+√ What is your project named? ... feedback_system
+√ Would you like to use TypeScript? ... No / Yes
+√ Would you like to use ESLint? ... No / Yes
+√ Would you like to use Tailwind CSS? ... No / Yes
+√ Would you like to use `src/` directory? ... No / Yes
+√ Would you like to use App Router? (recommended) ... No / Yes
+√ Would you like to customize the default import alias (@/*)? ... No / Yes
+Creating a new Next.js app in C:\Users\Abhishek\Desktop\Feedback-system-using-NEXT-JS\feedback_system.
+
+STEP 3:-
+npm i --> to install all packages
+npm run dev --> to run project
+
+STEP 4:- CREATE A SCHEMA OF ALL THE REQUIRED FIELDS YOU WANT 
+feedback_system\src\app\model -->create a model folder
+npm i mongoose
+
+
+STEP 5:-
+to get unique email address go to
+https://regexr.com/ --> community pattern --> search email or any other field yout want
+ paste it in schema
+  email: 
+    type: String,
+    required: true,
+    unique: true,
+    match: [
+      /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
+      "Please use a valid email address",
+    ],
+
+
+Step 6:-
