@@ -146,3 +146,15 @@ for  information of routers go to this gpt link
 https://chatgpt.com/share/670ba261-b2ec-8008-89a4-47e724a03af9
 
 
+step 16;
+
+NEXT AUTH 
+
+1.search next auth 
+2.go to the documenatation
+3.Crate a folder structure as the documentation say
+
+4. https://next-auth.js.org/providers/github go here ands take any provider your want  to use
+
+5.go to the credentail (ID ansd password)
+6. write all the logic in the option
