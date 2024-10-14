@@ -146,7 +146,7 @@ for  information of routers go to this gpt link
 https://chatgpt.com/share/670ba261-b2ec-8008-89a4-47e724a03af9
 
 
-step 16;
+step 16:-
 
 NEXT AUTH 
 
@@ -157,4 +157,13 @@ NEXT AUTH
 4. https://next-auth.js.org/providers/github go here ands take any provider your want  to use
 
 5.go to the credentail (ID ansd password)
-6. write all the logic in the option
+6. write all the logic in the option.ts
+
+7. NEXTAUTH_SECRET="" //add to the next auth  secret in the .env file
+
+
+step 17:- MIDDLEWARE
+
+https://next-auth.js.org/configuration/nextjs#middleware
+1.go to the middleware and gave the command to render the templates and all (follo the feedback_system\src\middleware.ts ) file 
+for more infromation
