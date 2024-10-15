@@ -90,6 +90,10 @@ export const authOptions: NextAuthOptions = {
   // Custom pages configuration
   pages: {
     signIn: "/sign-in", // Custom sign-in page
+    signOut: "/sign-out", // Custom sign-out page (optional)
+    error: "/auth/error", // Error page for authentication issues
+    verifyRequest: "/auth/verify-request", // Verification email sent page
+    newUser: "/auth/new-user", // Redirect to the new user page after sign up
   },
 
   // Session strategy
@@ -99,4 +103,14 @@ export const authOptions: NextAuthOptions = {
 
   // Secret for JWT token encryption
   secret: process.env.NEXTAUTH_SECRET,
+
+  // Define callback URLs for authentication events
+  // Redirect after sign-in and sign-out
+  redirect: async (url, baseUrl) => {
+    // Redirect to the dashboard after sign-in or the home page for sign-out
+    if (url === '/sign-in' || url === '/dashboard') {
+      return Promise.resolve(`${baseUrl}/dashboard`);
+    }
+    return Promise.resolve(baseUrl);
+  },
 };

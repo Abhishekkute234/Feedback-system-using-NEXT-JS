@@ -166,4 +166,10 @@ step 17:- MIDDLEWARE
 
 https://next-auth.js.org/configuration/nextjs#middleware
 1.go to the middleware and gave the command to render the templates and all (follo the feedback_system\src\middleware.ts ) file 
-for more infromation
+for more information
+
+step 18 :- summery 
+
+1. create a feedback_system\src\app\api\[...nextauth] Folder and create two files option.ts and route .ts
+2. just go to the documenatation and see the provider an credentais
+

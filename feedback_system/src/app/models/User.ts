@@ -25,7 +25,7 @@ export interface User extends Document {
   password: string;
   verifyCode: string;
   verifyCodeExpiry: Date; // Corrected typo from "verifyCodeExpery"
-  isVerified:boolean;
+  isVerified: boolean;
   isAcceptingMessage: boolean;
   messages: Message[]; // Array of Message references
 }
@@ -58,23 +58,25 @@ const UserSchema: Schema<User> = new Schema({
     type: Date,
     required: true,
   },
-  isVerified:{
-    type:Boolean,
-    default:false,
+  isVerified: {
+    type: Boolean,
+    default: false,
   },
   isAcceptingMessage: {
     type: Boolean,
     default: true,
   },
-  messages: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Message', // Reference to the Message schema
-  }],
+  messages: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Message", // Reference to the Message schema
+    },
+  ],
 });
 
-// Create the Message and User models
-const MessageModel = mongoose.model<Message>("Message", MessageSchema);
-const UserModel = mongoose.model<User>("User", UserSchema);
+// Check if the models already exist before defining them
+const MessageModel = mongoose.models.Message || mongoose.model<Message>("Message", MessageSchema);
+const UserModel = mongoose.models.User || mongoose.model<User>("User", UserSchema);
 
 // Export both models, without default exports
 export { MessageModel, UserModel };
